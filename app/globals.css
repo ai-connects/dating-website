@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #B1EE00;
+  --color-primary-400: #C6F835;
+  --color-primary-300: #D7FF64;
+  --color-primary-200: #E8FFA5;
+  --color-secondary: #1243EE;
+  --color-havit-pink: #FF6391;
+  --color-havit-yellow: #FFCF24;
+  --color-havit-blue: #3EB9FF;
+  --color-havit-green: #00C15F;
+  --color-havit-cyan: #70D8FC;
+  --color-havit-purple: #7E45FF;
+  --color-g900: #000000;
+  --color-g800: #171A1E;
+  --color-g700: #31363D;
+  --color-g600: #666666;
+  --color-g00: #FFFFFF;
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Hero float animation for app card */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-hero-float {
+  animation: hero-float 4s ease-in-out infinite;
+}
+
+/* Subtle glow pulse for CTA */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 207, 36, 0.4); }
+  50% { box-shadow: 0 0 24px 4px rgba(255, 207, 36, 0.25); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
